@@ -28,7 +28,8 @@ group :test do
 
   # Uncomment these lines on Windows.
   gem 'rb-notifu', '0.0.4'
-  gem 'wdm', '0.1.0'
+  require 'rbconfig'
+  gem 'wdm', '>= 0.1.0' if RbConfig::CONFIG['target_os'] =~ /mswin|mingw/i
 
   gem 'spork-rails', '4.0.0'
   gem 'guard-spork', '1.5.0'
@@ -53,3 +54,6 @@ group :production do
   gem 'pg', '0.15.1'
   gem 'rails_12factor', '0.0.2'
 end
+
+gem 'listen', '~> 2.7' # this prevents upgrading to 3.x
+gem 'rails-erd'
