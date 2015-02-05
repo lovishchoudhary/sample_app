@@ -3,6 +3,7 @@ class MicropostsController < ApplicationController
   before_action :correct_user, only: :destroy
 
   
+  
   def index
   end
   
@@ -16,6 +17,7 @@ class MicropostsController < ApplicationController
   		render 'static_pages/home'
   	end
   end
+  
 
   def destroy
     @micropost.destroy

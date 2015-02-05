@@ -1,13 +1,18 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
-    <div class="container">
-      <%= link_to "sample app", root_path, id: "logo" %>
-      <nav>
+    <div id="nav_wrapper" class="container">
+      <%= link_to "Sports Booking", root_path, id: "logo" %>
+      
+      
         <ul class="nav pull-right">
-          <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to "Help", help_path %></li>
+          
+            <li><%= link_to "Ground Listings", listings_path%></li>
           <% if signed_in? %>
+
             <li><%= link_to "Users", users_path %></li>
+            
+            <li><%= link_to "Slotsharing", slotsharing_path %></li>
+            <li><%= link_to "Microblog", microblog_path %></li>
             <li id="fat-menu" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 Account <b class="caret"></b>
@@ -22,10 +27,10 @@
               </ul>
             </li>
           <% else %>
-            <li><%= link_to "Sign in", signin_path %></li>
+            <li><%= link_to "Login/Sign up", signin_path %></li>
           <% end %>
         </ul>
-      </nav>
+      
     </div>
   </div>
 </header>

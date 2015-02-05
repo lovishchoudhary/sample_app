@@ -54,7 +54,6 @@ h2 {
 	margin-bottom: 30px;
 	text-align: center;
 	font-weight: normal;
-	color: $grayLight;
 }
 
 p {
@@ -64,46 +63,483 @@ p {
 
 /*header*/
 
+#nav_wrapper {
+  background-color: #1f7f5c;
+  width: auto;
+}
+
 #logo {
   float: left;
-  margin-right: 10px;
   font-size: 1.7em;
   color: #fff;
   text-transform: uppercase;
   letter-spacing: -1px;
-  padding-top: 9px;
   font-weight: bold;
-  line-height: 1;
-  &:hover {
-    color: #fff;
-    text-decoration: none;
-  }
+  line-height: 1.5;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
+
+#logo:hover {
+  text-decoration:none;
+  background-color: #1f7f5c;
+}
+
+.pull-right {
+  float: right;
+  list-style: none;
+  margin-right: 60px;
+}
+
+.pull-right li {
+  float: left;
+  font-size:13px;
+  margin-top: 8px;
+  margin-bottom: 5px;
+  margin-right: 10px;
+}
+
+.pull-right a {
+  color: #D9D9D9 !important;
+}
+
+.pull-right a:hover {
+  color: #fff !important;
+  text-decoration: none;
+  background-color: #1f7f5c;
+}
+
+
+
 
 /* footer */
 
-footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid #eaeaea;
-  color: $grayLight;
-  a {
-    color: #555;
-    &:hover {
-      color: #222;
-    }
-  }
-  small {
-    float: left;
-  }
-  ul {
-    float: right;
-    list-style: none;
-    li {
-      float: left;
-      margin-left: 10px;
-    }
-  }
+.footer {
+  height: 30px;
+  background-color: #1f7f5c !important;
+}
+
+footer a {
+  color: #D9D9D9 !important;
+}
+
+footer a:hover {
+  text-decoration: none;
+  background-color: #1f7f5c;
+  color: #fff !important;
+}
+  
+footer ul {
+  float: right;
+  list-style: none;
+  margin-right: 40px;
+}
+
+footer ul li {
+  float: left;
+  font-size:16px;
+  margin-top: 14px;
+  margin-bottom: 7px;
+  margin-left: 30px;
+}
+
+
+/* Content */
+
+.content {
+  
+  display: inline-block;
+  background-image:url('/assets/football.jpg');
+  background-attachment: fixed;
+  background-repeat: no repeat;
+  background-postion: fixed;
+  /*background-size: cover;*/
+  height:500px;
+  padding-top: 50px;
+  width: auto;
+  position: relative;
+}
+
+.title {
+  color: #E8E8E8;
+}
+
+/* forms */
+
+input {
+  height: auto !important;
+}
+
+input, textarea, select, .uneditable-input {
+  width: 250px;
+  border: 0 none;
+  height: 30px;
+  outline: none;
+  background: white;
+  text-float: center;
+  color: #303030 !important;
+  box-sizing: border-box;
+  transition: all 0.15s;
+  @include box_sizing;
+}
+
+.form-horizontal {
+  width: auto;
+  margin-top: 7%;
+  margin-left: 30%;
+}
+
+.col-sm-2.control-label {
+  color: #E8E8E8 !important;
+}
+
+.col-sm-offset-3.col-sm-2 {
+  margin-top: 20px;
+}
+
+
+/* sports icon Homepage */
+
+.hp-tour {
+padding: 60px 0;
+height: 100%;
+}
+
+.ta-center {
+text-align: center;
+}
+
+.section-title--thin {
+font-weight: 300;
+font-size: 24px;
+margin-bottom: 30px;
+}
+
+.section-title {
+color: #383838;
+font-size: 27px;
+font-weight: bold;
+font-family: 18px/23px "Cantarell", sans-serif;
+}
+
+.mtop0 {
+margin-top: 10px;
+}
+
+.wrapper {
+zoom: 1;
+padding-left: 10px;
+padding-right: 10px;
+margin-right: auto;
+margin-left: auto;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+max-width: 1140px;
+}
+
+.col-l-4 {
+width: 25%;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+
+.col-m-1, .col-m-10, .col-m-11, .col-m-12, .col-m-13, .col-m-14, .col-m-15, .col-m-16, .col-m-2, .col-m-3, .col-m-4, .col-m-5, .col-m-6, .col-m-7, .col-m-8, .col-m-9 {
+float: left;
+}
+
+.col-l-1, .col-l-10, .col-l-11, .col-l-12, .col-l-13, .col-l-14, .col-l-15, .col-l-16, .col-l-2, .col-l-3, .col-l-4, .col-l-5, .col-l-6, .col-l-7, .col-l-8, .col-l-9, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-13, .col-lg-14, .col-lg-15, .col-lg-16, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-m-1, .col-m-10, .col-m-11, .col-m-12, .col-m-13, .col-m-14, .col-m-15, .col-m-16, .col-m-2, .col-m-3, .col-m-4, .col-m-5, .col-m-6, .col-m-7, .col-m-8, .col-m-9, .col-s-1, .col-s-10, .col-s-11, .col-s-12, .col-s-13, .col-s-14, .col-s-15, .col-s-16, .col-s-2, .col-s-3, .col-s-4, .col-s-5, .col-s-6, .col-s-7, .col-s-8, .col-s-9 {
+position: relative;
+min-height: 1px;
+padding-left: 10px;
+padding-right: 10px;
+}
+
+.col-l-1, .col-l-10, .col-l-11, .col-l-12, .col-l-13, .col-l-14, .col-l-15, .col-l-16, .col-l-2, .col-l-3, .col-l-4, .col-l-5, .col-l-6, .col-l-7, .col-l-8, .col-l-9, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-13, .col-lg-14, .col-lg-15, .col-lg-16, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-m-1, .col-m-10, .col-m-11, .col-m-12, .col-m-13, .col-m-14, .col-m-15, .col-m-16, .col-m-2, .col-m-3, .col-m-4, .col-m-5, .col-m-6, .col-m-7, .col-m-8, .col-m-9, .col-s-1, .col-s-10, .col-s-11, .col-s-12, .col-s-13, .col-s-14, .col-s-15, .col-s-16, .col-s-2, .col-s-3, .col-s-4, .col-s-5, .col-s-6, .col-s-7, .col-s-8, .col-s-9 {
+position: relative;
+min-height: 1px;
+padding-left: 10px;
+padding-right: 10px;
+}
+
+.collections-grid .collection-box, .hp-tour .collection-box {
+  margin-bottom: 20px;
+}
+
+.collections-grid .collection-box, .hp-collection .collection-box {
+  border-radius: 3px;
+-moz-border-radius: 3px;
+-webkit-border-radius: 3px;
+  width: 100%;
+  display: block;
+  float: left;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.collection-box-snippet .collections-title, .collection-box-snippet .collections-title-image {
+  z-index: 1;
+  background-position: center center;
+}
+
+.collections-grid .collections-title, .hp-collection .collections-title {
+  font-size: 18px;
+  position: absolute;
+  top: 24px;
+  left: 15px;
+  line-height: 20px;
+  color: #FFF;
+  text-shadow: 0 0 2px rgba(0,0,0,.3);
+  margin: 0;
+  font-weight: 400;
+  padding: 5px 0;
+  z-index: 1;
+  border-top: 1px solid rgba(255,255,255,.15);
+  border-bottom: 1px solid rgba(255,255,255,.15);
+}
+
+.collections-title {
+  position: relative;
+}
+
+h4 {
+  font-size: 1em;
+  margin: 1.33em 0;
+}
+
+h4, .h4 {
+  font-size: 18px;
+}
+
+.collections-grid .collection-box-bg, .hp-collection .collection-box-bg {
+  background-size: cover;
+  border-radius: 3px 3px 0 0;
+  background-position: center center;
+  overflow: hidden;
+  height: 100px;
+}
+
+.archery {
+  background-image:url('/assets/archery2.jpeg');
+  background-size: cover;
+}
+.badminton {
+  background-image:url('/assets/baddy1.jpeg');
+  background-size: cover;
+}
+.basketball {
+  background-image:url('/assets/basket2.jpeg');
+  background-size: cover;
+}
+.bowling {
+  background-image:url('/assets/bowling2.jpeg');
+  background-size: cover;
+}
+.cricket {
+  background-image:url('/assets/cricket1.jpeg');
+  background-size: cover;
+}
+.football {
+  background-image:url('/assets/football3.jpeg');
+  background-size: cover;
+}
+.gym {
+  background-image:url('/assets/gym1.jpeg');
+  background-size: cover;
+}
+.hockey {
+  background-image:url('/assets/hockey1.jpeg');
+  background-size: cover;
+}
+.martial {
+  background-image:url('/assets/martial4.png');
+  background-size: cover;
+}
+.pool {
+  background-image:url('/assets/pool4.jpeg');
+  background-size: cover;
+}
+.skating {
+  background-image:url('/assets/skating1.jpeg');
+  background-size: cover;
+}
+.squash {
+  background-image:url('/assets/squash3.jpeg');
+  background-size: cover;
+}
+.swimming {
+  background-image:url('/assets/swimming3.jpeg');
+  background-size: cover;
+}
+.tt {
+  background-image:url('/assets/tt1.jpeg');
+  background-size: cover;
+}
+.tennis {
+  background-image:url('/assets/tennis4.jpeg');
+  background-size: cover;
+}
+.volleyball {
+  background-image:url('/assets/volley1.jpeg');
+  background-size: cover;
+}
+.yoga {
+  background-image:url('/assets/yoga2.jpeg');
+  background-size: cover;
+}
+
+.collection-overlay {
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+background-color: rgba(0,0,0,.3);
+}
+
+.clear {
+clear: both;
+}
+
+
+/* Listings */
+
+
+#nav_bar p {
+  color: #505050 !important;
+}
+
+#nav_bar p a {
+  color: #505050 !important;
+}
+
+#nav_bar p a:hover {
+  text-decoration: none;
+  background-color: #fff;
+  color: #000 !important;
+}
+
+.form-inline {
+  float: right;
+  top: 5px;
+}
+
+.btn.btn-default {
+  margin-top: 22px;
+}
+
+.control-label {
+  color: #303030 !important;
+}
+
+.form-inline input {
+  height: auto !important;
+}
+
+.form-inline input, textarea, select, .uneditable-input {
+  
+  border: 0 none;
+  height: 30px;
+  border: #888888 solid thin;
+  background: #F0F8FF;
+  text-float: center;
+  color: #303030 !important;
+  box-sizing: border-box;
+  transition: all 0.15s;
+  @include box_sizing;
+}
+
+#Heading {
+border-bottom: thin;
+border-bottom-color: #E8E8E8;
+border-bottom-style: solid;
+border-spacing: inherit;
+font-weight: bold;
+font-size: 30px;
+margin-left: 120px;
+margin-top: 90px;
+margin-right: 120px;
+color: #303030;
+}
+
+.row {
+  border-bottom:thin;
+  border-bottom-color:#E8E8E8;
+  border-bottom-style:solid;
+  border-spacing: 1000px 0px !important;
+}
+#display_grounds {
+  font:Georgia, "Times New Roman", Times, serif;
+  margin-left:180px;
+  margin-top:20px;
+  margin-right:180px;
+  width: 60%;
+}
+
+#display_grounds ul {
+  
+  list-style-type:none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  padding-bottom:15px;
+  margin-top:15px;
+}
+
+#display_grounds ul li a:link {
+  text-decoration:none;
+  color:#333333;
+}
+
+#display_grounds ul li a:visited {
+  text-decoration: none;
+  color:#333333;
+}
+
+#display_grounds ul li a:hover {
+  text-decoration: none;
+  background-color: #fff;
+  color:#000000;
+}
+
+#display_grounds ul li a:active {
+  text-decoration: underline;
+  color:#333333;
+}
+
+#ground_name {
+  font-size:18px;
+  font-weight:900;
+  color:#333333;
+  margin-bottom: 5px;
+}
+
+#phone, #sport, #mail, #address {
+  font-size: 14px;
+  color: #666666;
+  margin-top: 2px;
+}
+
+#myCarousel {
+  padding-top: 15px;
+}
+
+.carousel-indicators.middle {
+  top: auto;
+  bottom: 15px;
+  text-align: center;  
+}
+
+.carousel-indicators.middle li {
+  float: none;
+  display: inline-block;
+}
+
+.carousel-control.left, .carousel-control.right {
+  background: none !important;
+  top: 50%;
+  border: none !important;
 }
 
 
@@ -174,18 +610,7 @@ aside {
   }
 }
 
-/* forms */
 
-input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
-  width: 100%;
-  margin-bottom: 15px;
-  @include box_sizing;
-}
-
-input {
-  height: auto !important;
-}
 
 #error_explanation {
   color: #f00;
@@ -194,6 +619,7 @@ input {
     margin: 0 0 18px 0;
   }
 }
+
 
 .field_with_errors {
   @extend .control-group;
@@ -242,3 +668,4 @@ aside {
     margin-bottom: 5px;
   }
 }
+

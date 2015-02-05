@@ -1,0 +1,36 @@
+<li>
+  <span class="content"><%= slotpost.content %>
+  </span>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Ground Name</th>
+        <th>Sport</th>
+        <th>Date</th>
+        <th>vacancy</th>
+      </tr>
+    </thead>
+      
+    <tbody>
+      <tr>
+        <td><%= slotpost.ground_name %></td>
+        <td><%= slotpost.sport %></td>
+        <td><%= slotpost.date %></td>
+        <td><%= slotpost.vacancy %></td>
+      </tr>
+    </tbody>
+  </table> 
+  
+  <% if current_user?(slotpost.user) %>
+     
+     <%= link_to "delete", slotpost, method: :delete,
+                                     data: { confirm: "You sure?" },
+                                     title: slotpost.content %>                
+  <% end %>
+
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(slotpost.created_at) %> ago.
+  </span>
+</li>
+

@@ -1,15 +1,29 @@
 SampleApp::Application.routes.draw do
+  resources :slots
+
+  resources :listings
+
+  resources :clubs
+
+  resources :sports
+
   resources :users do
     member do
       get :following, :followers
     end
   end
+
+  get '/slotshow' , to: "users#slotshow"
+
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
+  resources :slotposts, only: [:create, :destroy]
 
    
   root 'static_pages#home'
+  match '/slotsharing', to:    'static_pages#slotsharing',    via: 'get'
+  match '/microblog', to:    'static_pages#microblog',    via: 'get'
   match '/help', to:    'static_pages#help',    via: 'get'
   match '/about',to:    'static_pages#about',   via: 'get'
   match '/contact',to:  'static_pages#contact', via: 'get' 

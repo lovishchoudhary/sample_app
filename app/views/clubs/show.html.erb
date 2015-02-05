@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<%= image_tag @club.photo.url %>
+
+<p>
+  <strong>Club:</strong>
+  <%= @club.club %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @club.location %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @club.address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @club.city %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @club.description %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @club.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @club.phone %>
+</p>
+
+<p>
+  <strong>Sports Available</strong>
+  <%= @club.sports.pluck(:sport).flatten.join(", ")%>
+</p>
+
+<%= link_to 'Edit', edit_club_path(@club) %> |
+<%= link_to 'Back', clubs_path %>

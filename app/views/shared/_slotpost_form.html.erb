@@ -1,0 +1,18 @@
+<%= form_for(@slotpost) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.text_area :ground_name, placeholder: "Enter Ground Name"%>
+
+    <%= f.text_area :sport, placeholder: "Enter sport Name"%>
+
+    <%= f.date_select :date %>
+    <%= f.time_select :slot_start_time %>
+    <%= f.time_select :slot_end_time %>
+    <%= f.number_field :vacancy, placeholder: "Number of vacancies" %>
+
+    <%= f.text_area :content, placeholder: "Compose new slotpost..." %>
+  
+  </div>
+  
+  <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+<% end %>

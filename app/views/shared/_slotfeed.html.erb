@@ -1,0 +1,20 @@
+<% if @slotfeed_items.any? %>
+  <ol class="slotposts">
+  	<table>
+        <thead>
+          <tr>
+            <th>Pic</th>
+            <th>Name</th>
+            <th>Ground Name</th>
+            <th>Sport</th>
+            <th>Date</th>
+            <th>Slot Start Time</th>
+            <th>Slot End Time</th>
+            <th>vacancy</th>
+          </tr>
+        </thead>
+      </table>
+    <%= render partial: 'shared/slotfeed_item', collection: @slotfeed_items %>
+  </ol>
+  <%= will_paginate @slotfeed_items %>
+<% end %>

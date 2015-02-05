@@ -1,38 +1,263 @@
-<% if signed_in? %>
-  <div class="row">
-    <aside class="span4">
-      <section>
-        <%= render 'shared/user_info' %>
-      </section>
-      <section>
-        <%= render 'shared/stats' %>
-      </section>
-      <section>
-        <%= render 'shared/micropost_form' %>
-      </section>
-    </aside>
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+    <title>Book My Slot</title>
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Kotta+One|Cantarell:400,700" rel="stylesheet" type="text/css">
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js">
+    </script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js">
+    </script>
+  </head>
 
-    <div class="span8">
-      <h3>Micropost Feed</h3>
-      <%= render 'shared/feed' %>
-    </div>
-
-
-  </div>
+  <body>
   
-<% else %>
-  <div class="center hero-unit">
-    <h1>Welcome to the Sample App</h1>
+    <section class="content">
+    <h2 class="title"><strong>Choose your sport, book your slot, bring your buddies</strong></h2>  
+    <%= search_form_for @q, { :class => 'form-horizontal'} do |f| %>
+      <div class="form-group">
+        <%= f.label :club_city_cont, "City: ", { :class => 'col-sm-2 control-label'} %>
+        <div class="col-sm-3">
+          <%= f.collection_select :club_city_cont,  Club.select(:city).distinct, :city, :city, {:include_blank => 'None'}, { :class => 'form-control'} %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :sport_sport_cont, "Sport: ",  { :class => 'col-sm-2 control-label'} %>
+        <div class="col-sm-3">
+          <%= f.collection_select :sport_sport_cont, Sport.select(:sport).distinct, :sport, :sport, {:include_blank => 'None'}, { :class => 'form-control'} %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-2"> 
+          <%= f.submit class: 'btn btn-default' %>
+        </div>
+      </div>
+    <% end %>
+    </section>
 
-    <h2>
-      This is the home page for the
-      <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
-      sample application.
-    </h2>
-
-    <%= link_to "Sign up now!", signup_path,
-                                class: "btn btn-large btn-primary" %>
-  </div>
-
-  <%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
-<% end %>
+    <div class="hp-collection hp-tour">
+      <div class="section-title section-title--thin ta-center">What's your thing?</div>
+        <div class="hp-collection-data mtop0">
+          <div class="wrapper">
+            <div class="col-l-4 col-m-8 collection-item">
+              <div class="collection-box collection-box-snippet">
+                <a href="#" title="Archery in Bangalore">
+                  <h4 class="collections-title" >
+                    <span class="collections-title_text">Archery</span>
+                  </h4>
+                  <div class="collection-box-bg lazy archery">
+                    <div class="collection-overlay"></div>
+                  </div>
+                </a>
+              </div>
+              <div class="clear"></div>
+            </div>
+            <div class="col-l-4 col-m-8 collection-item">
+              <div class="collection-box collection-box-snippet">
+                <a href="#" title="Badminton in Bangalore">
+                  <h4 class="collections-title" >
+                    <span class="collections-title_text">Badminton</span>
+                  </h4>
+                  <div class="collection-box-bg lazy badminton">
+                    <div class="collection-overlay"></div>
+                  </div>
+                </a>
+              </div>
+              <div class="clear"></div>
+            </div>
+            <div class="col-l-4 col-m-8 collection-item">
+              <div class="collection-box collection-box-snippet">
+                <a href="#" title="Basketball in Bangalore">
+                  <h4 class="collections-title" >
+                    <span class="collections-title_text">Basketball</span>
+                  </h4>
+                  <div class="collection-box-bg lazy basketball">
+                    <div class="collection-overlay"></div>
+                  </div>
+                </a>
+              </div>
+              <div class="clear"></div>
+            </div>
+            <div class="col-l-4 col-m-8 collection-item">
+              <div class="collection-box collection-box-snippet">
+                <a href="#" title="Bowling in Bangalore">
+                  <h4 class="collections-title" >
+                    <span class="collections-title_text">Bowling</span>
+                  </h4>
+                  <div class="collection-box-bg lazy bowling">
+                    <div class="collection-overlay"></div>
+                  </div>
+                </a>
+              </div>
+              <div class="clear"></div>
+            </div>
+            <div class="col-l-4 col-m-8 collection-item">
+              <div class="collection-box collection-box-snippet">
+                <a href="#" title="Cricket in Bangalore">
+                  <h4 class="collections-title" >
+                    <span class="collections-title_text">Cricket</span>
+                  </h4>
+                  <div class="collection-box-bg lazy cricket">
+                    <div class="collection-overlay"></div>
+                  </div>
+                </a>
+              </div>
+              <div class="clear"></div>
+            </div>
+            <div class="col-l-4 col-m-8 collection-item">
+              <div class="collection-box collection-box-snippet">
+                <a href="#" title="Football in Bangalore">
+                  <h4 class="collections-title" >
+                    <span class="collections-title_text">Football</span>
+                  </h4>
+                  <div class="collection-box-bg lazy football">
+                    <div class="collection-overlay"></div>
+                  </div>
+                </a>
+              </div>
+              <div class="clear"></div>
+            </div>
+            <div class="col-l-4 col-m-8 collection-item">
+              <div class="collection-box collection-box-snippet">
+                <a href="#" title="Gym in Bangalore">
+                  <h4 class="collections-title" >
+                    <span class="collections-title_text">Gym</span>
+                  </h4>
+                <div class="collection-box-bg lazy gym">
+                  <div class="collection-overlay"></div>
+                </div>
+                </a>
+              </div>
+              <div class="clear"></div>
+            </div>
+            <div class="col-l-4 col-m-8 collection-item">
+              <div class="collection-box collection-box-snippet">
+                <a href="#" title="Hockey in Bangalore">
+                  <h4 class="collections-title" >
+                    <span class="collections-title_text">Hockey</span>
+                  </h4>
+                <div class="collection-box-bg lazy hockey">
+                  <div class="collection-overlay"></div>
+                </div>
+                </a>
+              </div>
+              <div class="clear"></div>
+            </div><div class="col-l-4 col-m-8 collection-item">
+              <div class="collection-box collection-box-snippet">
+                <a href="#" title="Martial Arts in Bangalore">
+                  <h4 class="collections-title" >
+                    <span class="collections-title_text">Martial Arts</span>
+                  </h4>
+                <div class="collection-box-bg lazy martial">
+                  <div class="collection-overlay"></div>
+                </div>
+                </a>
+              </div>
+              <div class="clear"></div>
+            </div><div class="col-l-4 col-m-8 collection-item">
+              <div class="collection-box collection-box-snippet">
+                <a href="#" title="Pool & Snooker in Bangalore">
+                  <h4 class="collections-title" >
+                    <span class="collections-title_text">Pool & Snooker</span>
+                  </h4>
+                <div class="collection-box-bg lazy pool">
+                  <div class="collection-overlay"></div>
+                </div>
+                </a>
+              </div>
+              <div class="clear"></div>
+            </div><div class="col-l-4 col-m-8 collection-item">
+              <div class="collection-box collection-box-snippet">
+                <a href="#" title="Skating in Bangalore">
+                  <h4 class="collections-title" >
+                    <span class="collections-title_text">Skating</span>
+                  </h4>
+                <div class="collection-box-bg lazy skating">
+                  <div class="collection-overlay"></div>
+                </div>
+                </a>
+              </div>
+              <div class="clear"></div>
+            </div><div class="col-l-4 col-m-8 collection-item">
+              <div class="collection-box collection-box-snippet">
+                <a href="#" title="Squash in Bangalore">
+                  <h4 class="collections-title" >
+                    <span class="collections-title_text">Squash</span>
+                  </h4>
+                <div class="collection-box-bg lazy squash">
+                  <div class="collection-overlay"></div>
+                </div>
+                </a>
+              </div>
+              <div class="clear"></div>
+            </div><div class="col-l-4 col-m-8 collection-item">
+              <div class="collection-box collection-box-snippet">
+                <a href="#" title="Swimming in Bangalore">
+                  <h4 class="collections-title" >
+                    <span class="collections-title_text">Swimming</span>
+                  </h4>
+                <div class="collection-box-bg lazy swimming">
+                  <div class="collection-overlay"></div>
+                </div>
+                </a>
+              </div>
+              <div class="clear"></div>
+            </div><div class="col-l-4 col-m-8 collection-item">
+              <div class="collection-box collection-box-snippet">
+                <a href="#" title="Table Tennis in Bangalore">
+                  <h4 class="collections-title" >
+                    <span class="collections-title_text">Table Tennis</span>
+                  </h4>
+                <div class="collection-box-bg lazy tt">
+                  <div class="collection-overlay"></div>
+                </div>
+                </a>
+              </div>
+              <div class="clear"></div>
+            </div>
+            <div class="col-l-4 col-m-8 collection-item">
+              <div class="collection-box collection-box-snippet">
+                <a href="#" title="Tennis in Bangalore">
+                  <h4 class="collections-title" >
+                    <span class="collections-title_text">Tennis</span>
+                  </h4>
+                <div class="collection-box-bg lazy tennis">
+                  <div class="collection-overlay"></div>
+                </div>
+                </a>
+              </div>
+              <div class="clear"></div>
+            </div>
+            <div class="col-l-4 col-m-8 collection-item">
+              <div class="collection-box collection-box-snippet">
+                <a href="#" title="Volleyball in Bangalore">
+                  <h4 class="collections-title" >
+                    <span class="collections-title_text">Volleyball</span>
+                  </h4>
+                <div class="collection-box-bg lazy volleyball">
+                  <div class="collection-overlay"></div>
+                </div>
+                </a>
+              </div>
+              <div class="clear"></div>
+            </div>
+            <div class="col-l-4 col-m-8 collection-item">
+              <div class="collection-box collection-box-snippet">
+                <a href="#" title="Yoga in Bangalore">
+                  <h4 class="collections-title" >
+                    <span class="collections-title_text">Yoga</span>
+                  </h4>
+                <div class="collection-box-bg lazy yoga">
+                  <div class="collection-overlay"></div>
+                </div>
+                </a>
+              </div>
+              <div class="clear"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<table>
+  
+
+
+  <tr>
+    <td><%= link_to gravatar_for(slotfeed_item.user), slotfeed_item.user %></td>
+    <td><span class="user">
+    <%= link_to slotfeed_item.user.name, slotfeed_item.user %>
+    </span><td/> 
+
+    <td><%= slotfeed_item.ground_name %></td>
+    <td><%= slotfeed_item.sport %></td>
+    <td><%= slotfeed_item.date %></td>
+    <td><%= slotfeed_item.slot_start_time %></td>
+    <td><%= slotfeed_item.slot_end_time %></td>
+    <td><%= slotfeed_item.vacancy %></td>
+    <td><%= slotfeed_item.content %></td> 
+
+    <td><span class="timestamp">
+      Posted <%= time_ago_in_words(slotfeed_item.created_at) %> ago.
+    </span></td>
+  </tr>
+
+  <table>
+</li>

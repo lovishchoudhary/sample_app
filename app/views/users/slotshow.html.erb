@@ -1,0 +1,25 @@
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+    <section> 
+      <%=  render 'shared/stats'%>
+    </section>
+  </aside>
+
+  <div class="span8">
+    <%= render 'follow_form' if signed_in?%>
+    <% if @user.slotposts.any? %>
+      <h3>Slotposts (<%= @user.slotposts.count %>)</h3>
+      <ol class="slotposts">
+        <%= render @slotposts %>
+      </ol>
+      <%= will_paginate @slotposts %>
+    <% end %>
+  </div>
+</div>

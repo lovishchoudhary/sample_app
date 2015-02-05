@@ -7,9 +7,15 @@ class UsersController < ApplicationController
     @users= User.paginate(page: params[:page])
   end
   
+  def slotshow
+    @user= User.find(params[:id])
+    @slotposts = @user.slotposts.paginate(page: params[:page])
+  end
+
   def show
   	@user= User.find(params[:id])
     @microposts = @user.microposts.paginate(page: params[:page])
+    @slotposts = @user.slotposts.paginate(page: params[:page])
   end
   
   def new
