@@ -60,3 +60,10 @@ end
 gem 'listen', '~> 2.7' # this prevents upgrading to 3.x
 gem 'rails-erd'
 gem "paperclip", "~> 4.2"
+
+gem 'capistrano', '~> 3.1.0'
+gem 'capistrano-bundler', '~> 1.1.2'
+gem 'capistrano-rails', '~> 1.1.1'
+
+# Add this if you're using rvm
+gem 'capistrano-rvm', github: "capistrano/rvm"
